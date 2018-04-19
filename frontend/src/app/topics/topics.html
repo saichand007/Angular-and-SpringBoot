@@ -1,0 +1,9 @@
+<h1>Topics List</h1>
+<a routerLink="/addtopic" >AddTopic</a>
+<hr/>
+<ul *ngFor="let topic of resdata">
+
+  <li>{{topic.name}} <button (click)="delete(topic)">Delete</button> 
+    <button (click)="update(topic)">Update</button></li> 
+
+</ul>

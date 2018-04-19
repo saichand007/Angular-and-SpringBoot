@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Welcome</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+   </head>
+   <body>
+      <h1>Topics</h1>
+      <br/>
+
+      <form  action="#" th:action="@{/search}"  method="get">
+      
+      <input type="text" name="search" />
+      <br/>
+      <input type="submit" value="search" />
+      
+      </form>
+      <br/>
+      
+      <a th:href="@{/form}">Add Course</a> 
+      <hr/>
+    <table>
+    <tr>
+    <th>Course </th>
+    <th>Course Details</th>
+    <th>Update </th>
+    <th>Delete </th>
+    </tr>
+    <tr  th:each="topic : ${topics}">
+   
+       <td> 
+      <p th:text="${topic.name}" ></p>
+       </td>
+        <td> 
+       <a th:href="@{'/onetopic/'+ ${topic.id}}"  th:text="Details" ></a>
+       </td>
+
+       <td> 
+        <a th:href="@{'/update/'+${topic.id}}" th:text="Update" ></a>
+        </td>
+       <td> 
+       <a th:href="@{'/delete/'+${topic.id}}" th:text="Delete" ></a>
+       
+       </td>
+      
+       </tr>
+    </table>
+     
+      <!--  
+       
+         In Thymeleaf the equivalent of
+         JSP's ${pageContext.request.contextPath}/edit.html
+         would be @{/edit.html}
+          
+         -->
+         
+   </body>
+    
+</html>

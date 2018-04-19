@@ -1,0 +1,17 @@
+<h1>Add Topic</h1>
+
+<form #f="ngForm" (ngSubmit)="submit(f.value)" ngNativeValidate>
+CourseID:<input type="number" name="id" placeholder="Enter Id" 
+            [(ngModel)]="topic.id" required/>
+ <br/>
+ Name:<input type="text" name="name" placeholder="Enter course"
+                     [(ngModel)]="topic.name" required/>
+ <br/>
+ Description:<input type="text" name="description" placeholder="Enter Description"
+                               [(ngModel)]="topic.description" required/>
+ <br/>
+ <input type="submit" value="submit"/>
+</form>
+<div *ngIf="self"><button (click)="delete(topic.id)">Delete</button></div>
+<br/>
+<a routerLink="/topics">Topics</a>

@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Welcome</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+   </head>
+   <body>
+      <h1>Topic</h1>
+      
+       
+       CourseID: <p th:text="${topic.id}"> </p>
+         <br/>
+        <p> Name:<h4 th:text="${topic.name}"></h4></p>
+         <br/>
+       <p> Description<h4 th:text="${topic.Description}"></h4></p>
+         <br/>
+        
+        
+            <hr/>     
+      <a th:href="@{/topics}">Topics</a>  
+       
+   </body>
+    
+</html>
